@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:text="huy@gmail.com"
         android:background="@drawable/boder_edittext"
         android:backgroundTint="@color/white"
         android:id="@+id/edtemail"/>
@@ -46,6 +47,7 @@
             android:layout_height="match_parent"
             android:inputType="textPassword"
             android:padding="10dp"
+            android:text="123456"
             android:background="@drawable/boder_edittext"
             android:backgroundTint="@color/white"
             android:id="@+id/edtpasword"/>

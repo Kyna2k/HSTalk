@@ -55,6 +55,7 @@ import com.google.mlkit.vision.pose.defaults.PoseDetectorOptions;
 import java.io.File;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer{
@@ -68,7 +69,7 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
     CameraInfo cameraInfo;
     SeekBar zoom;
     LinearLayout viewchup;
-    TextView noidung,countdown;
+    TextView noidung,countdown,ketqua;
     Boolean check = false;
     String uri;
     ImageLabeler labeler;
@@ -83,6 +84,7 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
         // Releases model resources if no longer used.
         noidung = findViewById(R.id.noidung);
         countdown = findViewById(R.id.countdown);
+        ketqua = findViewById(R.id.ketqua);
         //Pose
         PoseDetectorOptions options =
                 new PoseDetectorOptions.Builder()
@@ -97,7 +99,7 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
                 .build();
         CustomImageLabelerOptions customImageLabelerOptions =
                 new CustomImageLabelerOptions.Builder(localModel)
-                        .setConfidenceThreshold(0.9f)
+                        .setConfidenceThreshold(0.7f)
                         .setMaxResultCount(1)
 
                         .build();
@@ -123,7 +125,7 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
             public void onClick(View view) {
 
                 //chuphinh();
-                get.close();
+                speak.speak(ketqua.getText().toString(),TextToSpeech.QUEUE_FLUSH,null, UUID.randomUUID().toString());
 
             }
         });
@@ -147,7 +149,7 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
             public void onInit(int i) {
                 if(i != TextToSpeech.ERROR)
                 {
-                    speak.setLanguage(Locale.getDefault());
+                    speak.setLanguage(Locale.US);
                 }
             }
         });
@@ -342,7 +344,8 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
                                     {
                                         for(ImageLabel im : imageLabels) {
                                             chuoi = chuoi + im.getText();
-                                            noidung.setText(chuoi);
+                                            noidung.setText(im.getText());
+                                            ketqua.setText(chuoi);
                                             Log.e("nganhlon_custom", chuoi);
                                             break;
                                         }

@@ -21,8 +21,6 @@ public class LoadingScreenActivity extends AppCompatActivity {
         btnsignup=findViewById(R.id.btnsignup);
         txtskip=findViewById(R.id.txtskip);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
 
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override

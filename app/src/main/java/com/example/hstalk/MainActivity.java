@@ -8,6 +8,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.example.hstalk.Fragment.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -21,7 +23,11 @@ import com.google.android.material.navigation.NavigationView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(this.getResources().getColor(android.R.color.transparent));
+        window.setNavigationBarColor(this.getResources().getColor(android.R.color.transparent));
+        window.setBackgroundDrawable(this.getResources().getDrawable(R.mipmap.background_home));
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Kyna Sale");
         setSupportActionBar(toolbar);

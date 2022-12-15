@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
         <androidx.appcompat.widget.Toolbar
-            android:background="@android:color/transparent"
+            android:background="#303F9F"
             app:title="@null"
+            app:titleTextColor="@color/white"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,8 +29,10 @@
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:padding="0dp"
+        app:headerLayout="@layout/header_menu"
         android:id="@+id/menu"
         android:layout_gravity="start"
+        android:background="#4D5667FD"
         app:menu="@menu/menu"
         app:itemTextColor="@drawable/menu_click"
         app:itemIconTint="@drawable/menu_click"
