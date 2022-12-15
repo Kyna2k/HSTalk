@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:padding="15dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:src="@drawable/imglogin"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email address"
+        android:layout_marginTop="55dp"
+        android:textColor="@color/white"
+        android:textSize="16dp"/>
+    <EditText
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@drawable/boder_edittext"
+        android:backgroundTint="@color/white"
+        android:id="@+id/edtemail"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="@color/white"
+        android:textSize="16dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/boder_edittext"
+            android:backgroundTint="@color/white"
+            android:id="@+id/edtpasword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp"
+        android:background="@drawable/boder_button"
+        android:text="Sign in"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:padding="20dp"
+        android:id="@+id/btnlogin"
+        android:backgroundTint="@color/purple_500"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp"
+        android:layout_marginTop="33dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Don’t have account?"
+            android:textColor="@color/white"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sign up"
+            android:textSize="18dp"
+            android:textColor="@color/purple_500"/>
+    </LinearLayout>
+
+
+</LinearLayout>
