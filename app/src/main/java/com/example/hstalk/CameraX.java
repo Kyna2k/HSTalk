@@ -70,7 +70,7 @@ public class CameraX extends AppCompatActivity implements ImageAnalysis.Analyzer
     SeekBar zoom;
     LinearLayout viewchup;
     TextView noidung,countdown,ketqua;
-    Boolean check = false;
+    Boolean check = true;
     String uri;
     ImageLabeler labeler;
     PoseDetector poseDetector;
